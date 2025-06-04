@@ -3,14 +3,14 @@
 
 ---
 
-##1. Objective
+## 1. Objective
 
 This demo showcases a phishing-style reverse shell attack using a disguised `.desktop` file on Ubuntu.  
 When the victim double-clicks the file, it initiates a reverse shell back to the attacker's Kali machine without opening a terminal or requiring further interaction.
 
 ---
 
-##2. Environment Setup
+## 2. Environment Setup
 
 - **Attacker:** Kali Linux  
 - **Victim:** Ubuntu Desktop VM  
@@ -19,7 +19,7 @@ When the victim double-clicks the file, it initiates a reverse shell back to the
 
 ---
 
-##3. Tools Used
+## 3. Tools Used
 
 - Netcat for listening on the attacker’s side  
 - Bash reverse shell payload embedded in a `.desktop` file  
@@ -28,13 +28,13 @@ When the victim double-clicks the file, it initiates a reverse shell back to the
 
 ---
 
-##4. Attack Scenario
+## 4. Attack Scenario
 
 A `.desktop` file named `importantFile.pdf.desktop` was created with a malicious `Exec` command that opens a reverse shell to the attacker's machine.  
 When the file is made executable and allowed for launching in Ubuntu, double-clicking it initiates a shell session back to the attacker.
 
 ---
-##Execution Steps
+## Execution Steps
 
 1. **Create the Payload File (`importantFile.pdf.desktop`)**
 
@@ -91,7 +91,7 @@ Open a terminal on Kali and run:
 On the Ubuntu target, double-click the `importantFile.pdf.desktop` file on the Desktop to trigger the reverse shell connection to your Kali listener.
 
 
-##Sources Used
+## Sources Used
 
 - Linux man pages (`chmod`, `bash`, `netcat`)
 - Python official documentation: [`python3 -m http.server`](https://docs.python.org/3/library/http.server.html)
@@ -101,7 +101,7 @@ On the Ubuntu target, double-click the `importantFile.pdf.desktop` file on the D
 
 ---
 
-##Conclusion
+## Conclusion
 
 This procedure demonstrates a straightforward way to create a malicious `.desktop` file that establishes a reverse shell connection from an Ubuntu target back to an attacker’s Kali machine. By hosting the payload on a simple Python HTTP server and using basic Linux commands to download, set permissions, and execute the file, the attacker can gain remote shell access.
 
